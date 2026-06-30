@@ -1,68 +1,85 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>AYA EC | Contacto</title><link rel="stylesheet" href="../styles.css">
-    </head>
-    <body>
-    <header class="site-header">
-        <a href="../index.html" class="brand">
-            <span class="brand-mark">AYA</span>
-            <span class="brand-text">EC</span>
-        </a>
-        <nav class="main-nav" id="main-nav" aria-label="Menú principal">
-            <ul>
-                <li class="dropdown"><a href="#sobre-aya">Sobre AYA</a>
-                <ul class="submenu">
-                    <li><a href="#mision">Misión</a></li>
-                    <li><a href="#vision">Visión</a></li>
-                    <li><a href="#valores">Valores</a></li>
-                    <li><a href="pages/equipo.html">Equipo</a></li>
-                    <li><a href="pages/contacto.html">Contacto</a></li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="pages/servicios.html">Servicios</a>
-                <ul class="submenu">
-                    <li><a href="pages/asesoria-energetica.html">Diseño e instalación</a></li>
-                    <li><a href="pages/construccion-sostenible.html">Construcción sostenible</a></li>
-                    <li><a href="pages/inversion.html">Inversión y Asesoria</a></li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="pages/soluciones.html">Soluciones</a>
-                <ul class="submenu">
-                    <li><a href="pages/residencial.html">Residencial</a></li>
-                    <li><a href="pages/comercial.html">Comercial</a></li>
-                    <li><a href="pages/industrial.html">Industrial</a></li>
-                    <li><a href="pages/construccion.html">Construcción</a></li>
-                    <li><a href="pages/transporte.html">Transporte</a></li>
-                </ul>
-                </li>
-                <li class="dropdown"><a href="pages/recursos.html">Recursos</a>
-                <ul class="submenu">
-                    <li><a href="pages/biblioteca.html">Aprende mas</a></li>
-                    <li><a href="pages/proyectos.html">Proyectos</a></li>
-                    <li><a href="pages/galeria.html">Galería</a></li>
-                    <li><a href="pages/descargas.html">Descargas</a></li>
-                </ul>
-                </li>
-                <li><a class="nav-cta" href="pages/contacto.html">Solicitar diagnóstico</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="section">
-        <div class="container section-heading">
-           <h1 class="eyebrow">Contacto</h1>
-                <div class="contact-copy">
-                    <h2 id="contact-title">Cuéntanos sobre tu proyecto energético</h2>
-                    <p>¿Qué tipo de proyecto tienes? Nos encantaría escucharte. Llena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
-                    </div>
-                    <div class="formulario">
-                        <script src="https://js.hsforms.net/forms/embed/51590813.js" defer></script>
-                        <div class="hs-form-frame" data-region="na1" data-form-id="0779e32f-bbda-4b32-8669-d626409a2178" data-portal-id="51590813"></div>     
-                    </div>
-                </div>
-        </main>
-     <script src="script.js"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AYA EC | Contacto</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css" />
+  <script src="https://js.hsforms.net/forms/embed/51590813.js" defer></script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a href="../index.html" class="brand" aria-label="AYA EC Inicio">
+      <img src="../assets/Logo_AYA_blancas.png" alt="AYA EC" height="90" width="180" />
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+      <span class="sr-only">Abrir menú</span>
+    </button>
+    <nav class="main-nav" id="main-nav" aria-label="Menú principal">
+      <ul>
+        <li><a href="equipo.html">Sobre AYA</a></li>
+        <li class="dropdown"><a href="servicios.html">Servicios</a>
+          <ul class="submenu">
+            <li><a href="asesoria-energetica.html">Diseño e instalación</a></li>
+            <li><a href="construccion-sostenible.html">Construcción sostenible</a></li>
+            <li><a href="inversion.html">Inversión y Asesoría</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="soluciones.html">Soluciones</a>
+          <ul class="submenu">
+            <li><a href="residencial.html">Residencial</a></li>
+            <li><a href="comercial.html">Comercial</a></li>
+            <li><a href="industrial.html">Industrial</a></li>
+            <li><a href="construccion.html">Construcción</a></li>
+            <li><a href="transporte.html">Transporte</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="recursos.html">Recursos</a>
+          <ul class="submenu">
+            <li><a href="biblioteca.html">Aprende más</a></li>
+            <li><a href="proyectos.html">Proyectos</a></li>
+            <li><a href="galeria.html">Galería</a></li>
+            <li><a href="descargas.html">Descargas</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-cta" href="contacto.html">Solicitar diagnóstico</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contacto</p>
+          <h2 id="contact-title">Cuéntanos sobre tu proyecto energético</h2>
+          <p>¿Qué tipo de proyecto tienes? Nos encantaría escucharte. Llena el formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        </div>
+        <div class="formulario reveal delay-1">
+          <div class="hs-form-frame" data-region="na1" data-form-id="0779e32f-bbda-4b32-8669-d626409a2178" data-portal-id="51590813"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/593987377181?text=Hola%20AYA%20EC%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20energ%C3%A9tico" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <img src="../assets/whatsapp.svg" width="50" height="50" alt="WhatsApp" />
+  </a>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>AYA EC</strong><p>¿Estás listo? Solicita más información.</p></div>
+      <div><a href="soluciones.html">Soluciones</a>
+           <a href="servicios.html">Servicios</a>
+           <a href="contacto.html">Contacto</a></div>
+      <div><p>Quito, Ecuador</p><p>© <span id="year"></span> AYA EC. Todos los derechos reservados.</p></div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

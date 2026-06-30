@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 760" role="img">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f28c28"/><stop offset="1" stop-color="#8b2e20"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-opacity=".35"/></filter></defs>
-  <rect width="900" height="760" rx="44" fill="#141719"/>
-  <circle cx="690" cy="170" r="92" fill="url(#g)" opacity=".95"/>
-  <path d="M0 465 C150 385 230 450 360 370 C520 275 640 360 900 245 L900 760 L0 760Z" fill="#221814"/>
-  <path d="M0 522 C220 430 310 535 480 440 C630 355 760 390 900 330 L900 760 L0 760Z" fill="#0f1112"/>
+  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#f28c28"></stop><stop offset="1" stop-color="#8b2e20"></stop></linearGradient><filter id="s"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-opacity=".35"></feDropShadow></filter></defs>
+  <rect width="900" height="760" rx="44" fill="#141719"></rect>
+  <circle cx="690" cy="170" r="92" fill="url(#g)" opacity=".95"></circle>
+  <path d="M0 465 C150 385 230 450 360 370 C520 275 640 360 900 245 L900 760 L0 760Z" fill="#221814"></path>
+  <path d="M0 522 C220 430 310 535 480 440 C630 355 760 390 900 330 L900 760 L0 760Z" fill="#0f1112"></path>
   <g filter="url(#s)">
-    <g transform="translate(100 465)"><polygon points="0,50 240,0 405,96 160,152" fill="#22272a"/><g stroke="#f28c28" stroke-width="4" opacity=".85"><path d="M43 48 294 104"/><path d="M92 38 344 94"/><path d="M141 28 392 84"/><path d="M28 74 270 128"/><path d="M77 63 320 118"/><path d="M126 53 370 108"/></g><g stroke="#fff" stroke-opacity=".18" stroke-width="3"><path d="M70 35 190 139"/><path d="M138 21 260 123"/><path d="M208 35 330 100"/></g></g>
-    <g transform="translate(455 420)"><rect x="0" y="130" width="310" height="92" rx="12" fill="#2b2e30"/><path d="M25 130 V55 L105 0 L185 55 V130Z" fill="#f4eee5"/><path d="M185 130 V38 L285 88 V130Z" fill="#d9c9b4"/><rect x="65" y="82" width="70" height="48" fill="#151718"/><polygon points="54,58 108,19 185,58" fill="#2b2e30"/><g transform="translate(192 56)"><polygon points="0,22 80,0 96,42 16,64" fill="#111"/><path d="M14 23 82 42M31 18 99 36M48 13 115 31" stroke="#f28c28" stroke-width="3" opacity=".85"/></g></g>
+    <g transform="translate(100 465)"><polygon points="0,50 240,0 405,96 160,152" fill="#22272a"></polygon><g stroke="#f28c28" stroke-width="4" opacity=".85"><path d="M43 48 294 104"></path><path d="M92 38 344 94"></path><path d="M141 28 392 84"></path><path d="M28 74 270 128"></path><path d="M77 63 320 118"></path><path d="M126 53 370 108"></path></g><g stroke="#fff" stroke-opacity=".18" stroke-width="3"><path d="M70 35 190 139"></path><path d="M138 21 260 123"></path><path d="M208 35 330 100"></path></g></g>
+    <g transform="translate(455 420)"><rect x="0" y="130" width="310" height="92" rx="12" fill="#2b2e30"></rect><path d="M25 130 V55 L105 0 L185 55 V130Z" fill="#f4eee5"></path><path d="M185 130 V38 L285 88 V130Z" fill="#d9c9b4"></path><rect x="65" y="82" width="70" height="48" fill="#151718"></rect><polygon points="54,58 108,19 185,58" fill="#2b2e30"></polygon><g transform="translate(192 56)"><polygon points="0,22 80,0 96,42 16,64" fill="#111"></polygon><path d="M14 23 82 42M31 18 99 36M48 13 115 31" stroke="#f28c28" stroke-width="3" opacity=".85"></path></g></g>
   </g>
-  <g opacity=".42" stroke="#f28c28" stroke-width="2"><path d="M190 230 C340 165 480 155 622 204" fill="none"/><path d="M210 270 C350 225 496 222 640 270" fill="none"/><path d="M235 312 C370 285 505 285 662 326" fill="none"/></g>
+  <g opacity=".42" stroke="#f28c28" stroke-width="2"><path d="M190 230 C340 165 480 155 622 204" fill="none"></path><path d="M210 270 C350 225 496 222 640 270" fill="none"></path><path d="M235 312 C370 285 505 285 662 326" fill="none"></path></g>
   <text x="72" y="96" font-family="Inter,Arial" font-size="46" font-weight="900" fill="#f7f4ee">AYA EC</text><text x="72" y="132" font-family="Inter,Arial" font-size="18" fill="#c8c0b6">energía inteligente para el futuro</text>
 </svg>

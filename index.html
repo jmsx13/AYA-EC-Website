@@ -12,11 +12,19 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <template id="__bundler_thumbnail" data-bg-color="#0d0f10">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0d0f10"/>
+      <circle cx="600" cy="360" r="150" fill="#f28c28"/>
+      <path d="M600 210 a150 150 0 0 1 0 300 z" fill="#8b2e20"/>
+      <text x="600" y="640" font-family="Helvetica,Arial,sans-serif" font-size="110" font-weight="900" fill="#f7f4ee" text-anchor="middle" letter-spacing="-5">AYA EC</text>
+    </svg>
+  </template>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
   <header class="site-header" id="top">
     <a href="index.html" class="brand" aria-label="AYA EC Inicio">
-      <img src="assets/Logo_AYA_negras.png" alt="AYA EC" height="90px" width="180px" />
+      <img src="assets/Logo_AYA_blancas.png" alt="AYA EC" height="90" width="180" />
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
@@ -26,14 +34,7 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Menú principal">
       <ul>
-        <li class="dropdown"><a href="#sobre-aya">Sobre AYA</a>
-          <ul class="submenu">
-            <li><a href="pages/nosotros">Nosotros</a></li>
-            <li><a href="pages/galeria.html">Qué hacemos?</a></li>
-            <li><a href="pages/galeria.html">Como </a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
-          </ul>
-        </li>
+        <li><a href="pages/equipo.html">Sobre AYA</a></li>
         <li class="dropdown"><a href="pages/servicios.html">Servicios</a>
           <ul class="submenu">
             <li><a href="pages/asesoria-energetica.html">Diseño e instalación</a></li>
@@ -66,9 +67,26 @@
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-visual reveal delay-1" aria-label="Ilustración de infraestructura solar y ciudad sostenible">
-          <img src="assets/Img01.png" alt="Paisaje energético con paneles solares, ciudad y sol" />
-          <div class="textarea">texto</div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Energía solar &amp; sostenibilidad</p>
+          <h1 id="hero-title">Energía que mueve al Ecuador</h1>
+          <p class="hero-text">Diseñamos e integramos soluciones de energía solar, eficiencia energética y sostenibilidad aplicada para hogares, comercios, industrias, constructoras e inversionistas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="pages/contacto.html">Solicitar diagnóstico</a>
+            <a class="btn btn-ghost" href="#ofrecemos">Ver soluciones</a>
+          </div>
+          <div class="hero-metrics">
+            <span><strong>Residencial</strong> · Comercial · Industrial</span>
+            <span><strong>Quito</strong>, Ecuador</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1" aria-label="Ilustración de infraestructura solar y ciudad sostenible">
+          <div class="hero-figure">
+            <span class="hero-glow" aria-hidden="true"></span>
+            <span class="hero-accent" aria-hidden="true"></span>
+            <img src="assets/Img01.png" alt="Paisaje energético con paneles solares, ciudad y sol" />
+          </div>
         </div>
       </div>
     </section>
@@ -103,6 +121,24 @@
       </div>
     </section>
 
+    <section class="section compare" aria-labelledby="compare-title">
+      <div class="container section-heading reveal">
+        <p class="eyebrow">Energía real</p>
+        <h2 id="compare-title">De la idea a la obra</h2>
+        <p>Arrastra el control para comparar nuestra visión ilustrada con una instalación solar real.</p>
+      </div>
+      <div class="container reveal delay-1" style="margin-top:36px">
+        <figure class="compare-figure" id="compare-aya">
+          <img class="compare-img compare-base" src="assets/compare-real.png" alt="Instalación solar real al atardecer" />
+          <img class="compare-img compare-top" src="assets/compare-ilustracion.png" alt="Ilustración de un parque solar al amanecer" />
+          <span class="compare-divider" aria-hidden="true"></span>
+          <span class="compare-label compare-label-l">Ilustración</span>
+          <span class="compare-label compare-label-r">Proyecto real</span>
+          <button class="compare-handle" type="button" aria-label="Arrastrar para comparar imágenes">&#10231;</button>
+        </figure>
+      </div>
+    </section>
+
     <section class="section segments" aria-labelledby="segments-title">
       <div class="container section-heading reveal">
         <p class="eyebrow">Soluciones por cliente</p>
@@ -125,11 +161,15 @@
         <p>AYA EC integra energía renovable, eficiencia energética y sostenibilidad aplicada para convertir proyectos residenciales, comerciales e industriales en activos más eficientes, resilientes y valiosos.</p>
       </div>
       <div class="container about-grid" id="mision" aria-labelledby="about-title">
-        <article class="statement-card reveal">
-          <h3 class="nav-cta">Misión</h3>
+        <article class="statement-card reveal" id="mision-card">
+          <span class="card-number">01</span>
+          <h3>Misión</h3>
+          <p>Contenido en preparación. Aquí se incluirá la misión de AYA EC.</p>
         </article>
-        <article class="statement-card reveal delay-1">
-          <h3 class="nav-cta">Visión</h3>
+        <article class="statement-card reveal delay-1" id="vision-card">
+          <span class="card-number">02</span>
+          <h3>Visión</h3>
+          <p>Contenido en preparación. Aquí se incluirá la visión de AYA EC.</p>
         </article>
         <article class="statement-card wide reveal delay-2" id="valores">
           <span class="card-number">03</span>
@@ -164,15 +204,15 @@
   </main>
 
   <a class="whatsapp" href="https://wa.me/593987377181?text=Hola%20AYA%20EC%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20energ%C3%A9tico" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <img src="assets/whatsapp.png" width="50px" height="50px">
+    <img src="assets/whatsapp.svg" width="50px" height="50px">
   </a>
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><strong>AYA EC</strong><p>Estas listo? Deseas mas información.</p></div>
+      <div><strong>AYA EC</strong><p>¿Estás listo? Solicita más información.</p></div>
       <div><a href="pages/soluciones.html">Soluciones</a>
            <a href="pages/servicios.html">Servicios</a>
-           <a href="pages/contacto.html">Contactos</a></div>
+           <a href="pages/contacto.html">Contacto</a></div>
       <div><p>Quito, Ecuador</p><p>© <span id="year"></span> AYA EC. Todos los derechos reservados.</p></div>
     </div>
   </footer>

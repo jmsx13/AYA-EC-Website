@@ -36,7 +36,10 @@ body{
         margin-inline:auto
     }
     .formulario{
-        background-color: #f3cb7af9;
+        background-color:#f3cb7af9;
+        padding:22px;
+        border-radius:var(--radius);
+        box-shadow:var(--shadow)
     }
     .skip-link
     {
@@ -66,7 +69,10 @@ body{
         justify-content:space-between;
         align-items:center;
         padding:18px clamp(16px,4vw,48px);
-        background:rgba(13, 15, 16, 0)
+        background:rgba(13,15,16,.72);
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
+        border-bottom:1px solid var(--line)
     }
     .brand{
         display:flex;
@@ -112,7 +118,7 @@ body{
         display:block;
         padding:10px 12px;
         border-radius:999px;
-        color:rgba(4, 4, 4, 0.86);
+        color:rgba(247,244,238,.88);
         font-size:1.05rem
     }
     .main-nav a:hover,
@@ -131,7 +137,7 @@ body{
         right:0;
         top:44px;
         min-width:230px;
-        list-style:none;~
+        list-style:none;
         margin:0;
         padding:10px;
         background:rgba(21,23,24,.96);
@@ -168,7 +174,7 @@ body{
     .hero-grid{
         position:relative;
         display:grid;
-        grid-template-columns:1.03fr .97fr;
+        grid-template-columns:.9fr 1.1fr;
         gap:48px;
         align-items:center;
         padding:92px 0 72px
@@ -237,7 +243,6 @@ body{
         color:#fff
     }
     .hero-visual{
-        filter:drop-shadow(0 45px 70px rgba(0,0,0,.48));
         animation:float 6s ease-in-out infinite
     }
     .section{
@@ -464,11 +469,15 @@ body{
         right:18px;
         bottom:18px;
         z-index:999;
-        background:#1f7f43;
-        color:#fff;
-        border-radius:999px;
-        padding:10px 12px;
-        font-weight:900;box-shadow:0 18px 40px rgba(0,0,0,.28)
+        width:62px;
+        height:62px;
+        border-radius:50%;
+        display:grid;
+        place-items:center;
+        padding:0;
+        background:transparent;
+        box-shadow:0 14px 30px rgba(0,0,0,.32);
+        animation:wa-bob 3.2s ease-in-out infinite
     }
     .site-footer{
         padding:40px 0;
@@ -477,7 +486,7 @@ body{
         border-top:1px solid var(--line)
     }
     .footer-grid{
-        display:grid;~
+        display:grid;
         grid-template-columns:1.2fr 1fr 1fr;
         gap:20px
     }
@@ -542,3 +551,154 @@ body{
         .site-header{padding:14px 16px}
         .contact-copy img{display:none}
     }
+
+
+/* ---- WhatsApp button: pulse ring + hover ---- */
+.whatsapp img{
+    width:auto;
+    height:60px;
+    border-radius:50%;
+    display:block
+}
+.whatsapp::before{
+    content:"";
+    position:absolute;
+    inset:1px;
+    border-radius:50%;
+    background:var(--solar);
+    z-index:-1;
+    animation:wa-pulse 2.6s ease-out infinite
+}
+.whatsapp:hover img{
+    transform:scale(1.07)
+}
+@keyframes wa-bob{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
+}
+@keyframes wa-pulse{
+    0%{transform:scale(.82);opacity:.55}
+    70%{transform:scale(1.55);opacity:0}
+    100%{transform:scale(1.55);opacity:0}
+}
+
+/* ---- Hero figure: enlarged image with glow + brand accent + parallax ---- */
+.hero-figure{
+    position:relative;
+    transition:transform .25s ease-out;
+    will-change:transform
+}
+.hero-figure img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    border-radius:var(--radius);
+    border:1px solid rgba(255,255,255,.16);
+    box-shadow:0 40px 90px rgba(0,0,0,.55)
+}
+.hero-glow{
+    position:absolute;
+    z-index:0;
+    inset:-16% -14% -22% -16%;
+    background:radial-gradient(closest-side,rgba(242,140,40,.5),rgba(242,140,40,0) 78%);
+    filter:blur(8px);
+    pointer-events:none
+}
+.hero-accent{
+    position:absolute;
+    z-index:1;
+    right:-26px;
+    bottom:-26px;
+    width:64%;
+    height:64%;
+    border-radius:var(--radius);
+    background:linear-gradient(135deg,var(--solar),var(--terra));
+    opacity:.9;
+    pointer-events:none
+}
+
+/* ---- Compare slider ("telón") ---- */
+.compare{
+    background:#0d0f10
+}
+.compare-figure{
+    --pos:50%;
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    border-radius:var(--radius);
+    overflow:hidden;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    background:#000;
+    cursor:ew-resize;
+    user-select:none;
+    -webkit-user-select:none;
+    touch-action:none
+}
+.compare-img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    pointer-events:none
+}
+.compare-top{
+    clip-path:inset(0 calc(100% - var(--pos)) 0 0)
+}
+.compare-divider{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:var(--pos);
+    width:3px;
+    transform:translateX(-50%);
+    background:var(--solar);
+    z-index:5;
+    pointer-events:none
+}
+.compare-handle{
+    position:absolute;
+    top:50%;
+    left:var(--pos);
+    transform:translate(-50%,-50%);
+    z-index:6;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:var(--solar);
+    color:#15120f;
+    border:3px solid #fff;
+    display:grid;
+    place-items:center;
+    font-size:1.15rem;
+    font-weight:900;
+    cursor:ew-resize;
+    box-shadow:0 10px 24px rgba(0,0,0,.45)
+}
+.compare-label{
+    position:absolute;
+    bottom:14px;
+    z-index:4;
+    padding:6px 12px;
+    border-radius:999px;
+    background:rgba(13,15,16,.55);
+    -webkit-backdrop-filter:blur(4px);
+    backdrop-filter:blur(4px);
+    color:#fff;
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:.04em;
+    pointer-events:none
+}
+.compare-label-l{left:14px}
+.compare-label-r{right:14px}
+
+@media(max-width:620px){
+    .hero-accent{right:-12px;bottom:-12px}
+    .compare-handle{width:42px;height:42px;font-size:1rem}
+}
+@media(prefers-reduced-motion:reduce){
+    .whatsapp,.whatsapp::before,.hero-visual{animation:none}
+}
