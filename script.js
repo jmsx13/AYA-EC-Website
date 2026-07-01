@@ -43,8 +43,7 @@ if (form) {
 
 
 // Compare slider ("telón"): follows the mouse on desktop, drag on touch
-const cmp = document.querySelector('.compare-figure');
-if (cmp) {
+document.querySelectorAll('.compare-figure').forEach((cmp) => {
   const setPos = (clientX) => {
     const r = cmp.getBoundingClientRect();
     let pct = ((clientX - r.left) / r.width) * 100;
@@ -63,7 +62,7 @@ if (cmp) {
   const stop = () => { dragging = false; };
   cmp.addEventListener('pointerup', stop);
   cmp.addEventListener('pointercancel', stop);
-}
+});
 
 // Hero image: subtle parallax on mouse move (desktop only, respects reduced motion)
 const heroEl = document.querySelector('.hero');
@@ -78,3 +77,119 @@ if (heroEl && heroFig && !matchMedia('(prefers-reduced-motion: reduce)').matches
   });
   heroEl.addEventListener('pointerleave', () => { heroFig.style.transform = ''; });
 }
+
+
+// ===== Reference-inspired scroll behaviour (adapted) =====
+// Header hides on scroll down / returns on scroll up, gains a solid state,
+// drives a top progress bar, and parallaxes the hero background.
+(function(){
+  const header = document.querySelector('.site-header');
+  const progress = document.querySelector('.scroll-progress span');
+  const heroBg = document.querySelector('.hero .hero-bg');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let lastY = window.scrollY || 0;
+  let ticking = false;
+
+  function update(){
+    const y = window.scrollY || 0;
+    const doc = document.documentElement;
+    const max = (doc.scrollHeight - doc.clientHeight) || 1;
+    if (progress) progress.style.width = Math.min(100, (y / max) * 100) + '%';
+    if (header){
+      header.classList.toggle('scrolled', y > 14);
+      // condense to logo-only when scrolling down past the hero-ish threshold; restore on scroll up
+      if (y > lastY && y > 170) header.classList.add('logo-only');
+      else header.classList.remove('logo-only');
+    }
+    if (heroBg && !reduce && y < window.innerHeight){
+      heroBg.style.transform = 'translateY(' + (y * 0.18).toFixed(1) + 'px)';
+    }
+    lastY = y;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+  update();
+})();
+
+
+// ===== Soluciones catalog carousel (drag + arrows + dots + autoplay) =====
+(function(){
+  const track = document.getElementById('catalog');
+  if (!track) return;
+  const wrap = track.closest('.catalog-wrap');
+  const prev = wrap.querySelector('.cat-prev');
+  const next = wrap.querySelector('.cat-next');
+  const dotsWrap = document.getElementById('catalog-dots');
+  const cards = Array.prototype.slice.call(track.children);
+  const stepW = () => { const c = track.querySelector('.cat-card'); const gap = parseFloat(getComputedStyle(track).gap) || 22; return c ? c.offsetWidth + gap : 320; };
+  const activeIndex = () => Math.round(track.scrollLeft / stepW());
+
+  if (dotsWrap){
+    cards.forEach((c, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.addEventListener('click', () => track.scrollTo({ left: stepW() * i, behavior: 'smooth' }));
+      dotsWrap.appendChild(b);
+    });
+  }
+  const dots = dotsWrap ? Array.prototype.slice.call(dotsWrap.children) : [];
+  const sync = () => { const a = activeIndex(); dots.forEach((d, i) => d.classList.toggle('active', i === a)); };
+  track.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+  if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -stepW(), behavior: 'smooth' }));
+  if (next) next.addEventListener('click', () => track.scrollBy({ left: stepW(), behavior: 'smooth' }));
+
+  // drag to scroll
+  let down = false, startX = 0, startL = 0, moved = false;
+  track.addEventListener('pointerdown', (e) => { down = true; moved = false; startX = e.clientX; startL = track.scrollLeft; track.classList.add('dragging'); try{track.setPointerCapture(e.pointerId);}catch(_){} stopAuto(); });
+  track.addEventListener('pointermove', (e) => { if (!down) return; const dx = e.clientX - startX; if (Math.abs(dx) > 4) moved = true; track.scrollLeft = startL - dx; });
+  const endDrag = () => { if(!down) return; down = false; track.classList.remove('dragging'); startAuto(); };
+  track.addEventListener('pointerup', endDrag);
+  track.addEventListener('pointercancel', endDrag);
+  track.addEventListener('click', (e) => { if (moved) { e.preventDefault(); } }, true);
+
+  // autoplay (pauses on hover / interaction)
+  let timer = null;
+  const advance = () => { const a = activeIndex(); if (a >= cards.length - 1) track.scrollTo({ left: 0, behavior: 'smooth' }); else track.scrollBy({ left: stepW(), behavior: 'smooth' }); };
+  function startAuto(){ stopAuto(); timer = setInterval(advance, 4200); }
+  function stopAuto(){ if (timer) { clearInterval(timer); timer = null; } }
+  wrap.addEventListener('pointerenter', stopAuto);
+  wrap.addEventListener('pointerleave', startAuto);
+  sync(); startAuto();
+})();
+
+// ===== Animated process: scroll-driven progress + step activation =====
+(function(){
+  const steps = document.getElementById('proc-steps');
+  if (!steps) return;
+  const fill = document.getElementById('proc-meter-fill');
+  const items = Array.prototype.slice.call(steps.querySelectorAll('.proc-step'));
+  function update(){
+    const r = steps.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = r.height || 1;
+    const seen = Math.min(Math.max(vh * 0.78 - r.top, 0), total);
+    const pct = Math.min(1, seen / total);
+    if (fill) fill.style.width = (pct * 100).toFixed(1) + '%';
+    const activeCount = Math.round(pct * items.length + 0.18);
+    items.forEach((it, i) => it.classList.toggle('active', i < activeCount));
+  }
+  window.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+
+// ===== Values accordion (Sobre AYA) =====
+(function(){
+  const heads = document.querySelectorAll('.values-accordion .val-head');
+  if (!heads.length) return;
+  heads.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.val-item');
+      const open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+})();

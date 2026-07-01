@@ -21,10 +21,12 @@
     </svg>
   </template>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <header class="site-header" id="top">
     <a href="index.html" class="brand" aria-label="AYA EC Inicio">
-      <img src="assets/Logo_AYA_blancas.png" alt="AYA EC" height="90" width="180" />
+      <img class="brand-full" src="assets/Logo_AYA_blancas.png" alt="AYA EC" height="90" width="180" />
+      <img class="brand-mark" src="assets/Logo_AYA_mark.png" alt="AYA EC" height="52" width="52" />
     </a>
 
     <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">
@@ -66,29 +68,27 @@
 
   <main id="contenido">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true">
+        <img class="hero-bg-img" src="assets/Img01.png" alt="" />
+        <span class="hero-orb hero-orb-1" aria-hidden="true"></span>
+        <span class="hero-orb hero-orb-2" aria-hidden="true"></span>
+      </div>
+      <div class="hero-scrim" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <p class="eyebrow">Energía solar &amp; sostenibilidad</p>
-          <h1 id="hero-title">Energía que mueve al Ecuador</h1>
-          <p class="hero-text">Diseñamos e integramos soluciones de energía solar, eficiencia energética y sostenibilidad aplicada para hogares, comercios, industrias, constructoras e inversionistas.</p>
-          <div class="hero-actions">
+        <div class="hero-copy">
+          <p class="eyebrow hero-in">Energía solar &amp; sostenibilidad</p>
+          <h1 id="hero-title" class="hero-in hero-in-1">Impulsamos soluciones energéticas sostenibles y eficientes en Ecuador.</h1>
+          <p class="hero-text hero-in hero-in-2">Especialistas en integración de energía solar, tecnología limpia y diseño responsable.</p>
+          <div class="hero-actions hero-in hero-in-3">
             <a class="btn btn-primary" href="pages/contacto.html">Solicitar diagnóstico</a>
             <a class="btn btn-ghost" href="#ofrecemos">Ver soluciones</a>
           </div>
-          <div class="hero-metrics">
-            <span><strong>Residencial</strong> · Comercial · Industrial</span>
-            <span><strong>Quito</strong>, Ecuador</span>
-          </div>
-        </div>
-        <div class="hero-visual reveal delay-1" aria-label="Ilustración de infraestructura solar y ciudad sostenible">
-          <div class="hero-figure">
-            <span class="hero-glow" aria-hidden="true"></span>
-            <span class="hero-accent" aria-hidden="true"></span>
-            <img src="assets/Img01.png" alt="Paisaje energético con paneles solares, ciudad y sol" />
-          </div>
         </div>
       </div>
+      <a class="hero-scroll" href="#ofrecemos" aria-label="Desplázate para ver más">
+        <span class="hero-scroll-dot" aria-hidden="true"></span>
+        <span class="hero-scroll-text">Desplázate</span>
+      </a>
     </section>
 
     <section class="section services" id="ofrecemos" aria-labelledby="services-title">
@@ -139,49 +139,56 @@
       </div>
     </section>
 
-    <section class="section segments" aria-labelledby="segments-title">
+    <section class="section segments catalog" aria-labelledby="segments-title">
       <div class="container section-heading reveal">
         <p class="eyebrow">Soluciones por cliente</p>
         <h2 id="segments-title">Cada proyecto tiene una oportunidad energética distinta</h2>
+        <p>Explora el catálogo de soluciones: arrastra, desliza o usa las flechas.</p>
       </div>
-      <div class="container segment-grid">
-        <a class="segment-card reveal" href="pages/residencial.html"><h3>Residencial</h3><p>Ahorro, respaldo e independencia energética para viviendas.</p></a>
-        <a class="segment-card reveal" href="pages/comercial.html"><h3>Comercial</h3><p>Reducción de costos para negocios con consumo relevante.</p></a>
-        <a class="segment-card reveal" href="pages/industrial.html"><h3>Industrial</h3><p>Continuidad operativa, autogeneración y eficiencia.</p></a>
-        <a class="segment-card reveal" href="pages/construccion.html"><h3>Construcción</h3><p>Proyectos solar ready y diseño energético inmobiliario.</p></a>
-        <a class="segment-card reveal" href="pages/asesoria-energetica.html"><h3>Arquitectos</h3><p>Integración energética desde etapas tempranas de diseño.</p></a>
-        <a class="segment-card reveal" href="pages/inversion.html"><h3>Inversión</h3><p>Prefactibilidad y desarrollo de activos solares en Ecuador.</p></a>
+      <div class="catalog-wrap reveal delay-1">
+        <button class="cat-nav cat-prev" type="button" aria-label="Anterior">&#8249;</button>
+        <div class="catalog-track" id="catalog">
+          <a class="cat-card" href="pages/residencial.html">
+            <div class="cat-media"><img src="assets/catalogo/residencial.svg" alt="Solución residencial" loading="lazy" /><span class="cat-index">01</span></div>
+            <div class="cat-body"><h3>Residencial</h3><p>Ahorro, respaldo e independencia energética para viviendas.</p><span class="cat-link">Ver solución &#8594;</span></div>
+          </a>
+          <a class="cat-card" href="pages/comercial.html">
+            <div class="cat-media"><img src="assets/catalogo/comercial.svg" alt="Solución comercial" loading="lazy" /><span class="cat-index">02</span></div>
+            <div class="cat-body"><h3>Comercial</h3><p>Reducción de costos para negocios con consumo relevante.</p><span class="cat-link">Ver solución &#8594;</span></div>
+          </a>
+          <a class="cat-card" href="pages/industrial.html">
+            <div class="cat-media"><img src="assets/catalogo/industrial.svg" alt="Solución industrial" loading="lazy" /><span class="cat-index">03</span></div>
+            <div class="cat-body"><h3>Industrial</h3><p>Continuidad operativa, autogeneración y eficiencia.</p><span class="cat-link">Ver solución &#8594;</span></div>
+          </a>
+          <a class="cat-card" href="pages/construccion.html">
+            <div class="cat-media"><img src="assets/catalogo/construccion.png" alt="Solución para construcción" loading="lazy" /><span class="cat-index">04</span></div>
+            <div class="cat-body"><h3>Construcción</h3><p>Proyectos solar ready y diseño energético inmobiliario.</p><span class="cat-link">Ver solución &#8594;</span></div>
+          </a>
+          <a class="cat-card" href="pages/transporte.html">
+            <div class="cat-media"><img src="assets/catalogo/transporte.png" alt="Solución de transporte" loading="lazy" /><span class="cat-index">05</span></div>
+            <div class="cat-body"><h3>Transporte</h3><p>Electromovilidad y soluciones de carga inteligente.</p><span class="cat-link">Ver solución &#8594;</span></div>
+          </a>
+        </div>
+        <button class="cat-nav cat-next" type="button" aria-label="Siguiente">&#8250;</button>
       </div>
+      <div class="catalog-dots" id="catalog-dots" aria-hidden="true"></div>
     </section>
 
-    <section class="section about" id="sobre-aya" aria-labelledby="about-title">
+    <section class="section compare" aria-labelledby="brand-compare-title">
       <div class="container section-heading reveal">
-        <p class="eyebrow">Quiénes somos</p>
-        <h2 id="about-title">Una empresa técnica para una nueva realidad energética</h2>
-        <p>AYA EC integra energía renovable, eficiencia energética y sostenibilidad aplicada para convertir proyectos residenciales, comerciales e industriales en activos más eficientes, resilientes y valiosos.</p>
+        <p class="eyebrow">Nuestra marca</p>
+        <h2 id="brand-compare-title">La energía que le da color a AYA</h2>
+        <p>Arrastra el control para revelar el color de nuestra identidad.</p>
       </div>
-      <div class="container about-grid" id="mision" aria-labelledby="about-title">
-        <article class="statement-card reveal" id="mision-card">
-          <span class="card-number">01</span>
-          <h3>Misión</h3>
-          <p>Contenido en preparación. Aquí se incluirá la misión de AYA EC.</p>
-        </article>
-        <article class="statement-card reveal delay-1" id="vision-card">
-          <span class="card-number">02</span>
-          <h3>Visión</h3>
-          <p>Contenido en preparación. Aquí se incluirá la visión de AYA EC.</p>
-        </article>
-        <article class="statement-card wide reveal delay-2" id="valores">
-          <span class="card-number">03</span>
-          <h3>Valores</h3>
-          <ul class="values-list">
-            <li>Rigor técnico</li>
-            <li>Transparencia comercial</li>
-            <li>Sostenibilidad aplicada</li>
-            <li>Innovación útil</li>
-            <li>Compromiso con el cliente</li>
-          </ul>
-        </article>
+      <div class="container reveal delay-1" style="margin-top:36px">
+        <figure class="compare-figure" id="compare-logo">
+          <img class="compare-img compare-base" src="assets/compare-logo-bw.png" alt="Logo de AYA EC en blanco y negro" />
+          <img class="compare-img compare-top" src="assets/compare-logo-color.png" alt="Logo de AYA EC a color" />
+          <span class="compare-divider" aria-hidden="true"></span>
+          <span class="compare-label compare-label-l">A color</span>
+          <span class="compare-label compare-label-r">Blanco y negro</span>
+          <button class="compare-handle" type="button" aria-label="Arrastrar para comparar el logo">&#10231;</button>
+        </figure>
       </div>
     </section>
 
@@ -191,13 +198,35 @@
           <p class="eyebrow">Cómo trabajamos</p>
           <h2 id="process-title">Del diagnóstico a la operación</h2>
           <p>Reducimos la incertidumbre técnica y comercial mediante un proceso claro, medible y escalable.</p>
+          <div class="proc-meter" aria-hidden="true"><span class="proc-meter-fill" id="proc-meter-fill"></span></div>
+          <p class="proc-hint">Desliza hacia abajo para recorrer el proceso &#8595;</p>
         </div>
-        <ol class="timeline reveal delay-1">
-          <li><strong>Diagnóstico inicial</strong><span>Consumo, ubicación, objetivos y restricciones.</span></li>
-          <li><strong>Diseño preliminar</strong><span>Dimensionamiento, tecnología y escenarios de solución.</span></li>
-          <li><strong>Propuesta técnico-comercial</strong><span>Inversión, alcance, tiempos y beneficios esperados.</span></li>
-          <li><strong>Implementación</strong><span>Integración de equipos, instalación y puesta en marcha.</span></li>
-          <li><strong>Monitoreo y mantenimiento</strong><span>Seguimiento de desempeño y soporte operativo.</span></li>
+        <ol class="proc-steps reveal delay-1" id="proc-steps">
+          <li class="proc-step">
+            <span class="proc-line" aria-hidden="true"></span>
+            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
+            <div class="proc-content"><span class="proc-step-n">Paso 01</span><strong>Diagnóstico inicial</strong><span class="proc-desc">Consumo, ubicación, objetivos y restricciones.</span></div>
+          </li>
+          <li class="proc-step">
+            <span class="proc-line" aria-hidden="true"></span>
+            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8a2 2 0 0 0-3-3L5 16z"></path><path d="M14 6l3 3"></path></svg></span>
+            <div class="proc-content"><span class="proc-step-n">Paso 02</span><strong>Diseño preliminar</strong><span class="proc-desc">Dimensionamiento, tecnología y escenarios de solución.</span></div>
+          </li>
+          <li class="proc-step">
+            <span class="proc-line" aria-hidden="true"></span>
+            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
+            <div class="proc-content"><span class="proc-step-n">Paso 03</span><strong>Propuesta técnico-comercial</strong><span class="proc-desc">Inversión, alcance, tiempos y beneficios esperados.</span></div>
+          </li>
+          <li class="proc-step">
+            <span class="proc-line" aria-hidden="true"></span>
+            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="9" rx="1"></rect><path d="M3 10h18M9 6v9M15 6v9M12 15v4M8 19h8"></path></svg></span>
+            <div class="proc-content"><span class="proc-step-n">Paso 04</span><strong>Implementación</strong><span class="proc-desc">Integración de equipos, instalación y puesta en marcha.</span></div>
+          </li>
+          <li class="proc-step">
+            <span class="proc-line" aria-hidden="true"></span>
+            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"></path></svg></span>
+            <div class="proc-content"><span class="proc-step-n">Paso 05</span><strong>Monitoreo y mantenimiento</strong><span class="proc-desc">Seguimiento de desempeño y soporte operativo.</span></div>
+          </li>
         </ol>
       </div>
     </section>
