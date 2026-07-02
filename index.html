@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home">
   <template id="__bundler_thumbnail" data-bg-color="#0d0f10">
     <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
       <rect width="1200" height="800" fill="#0d0f10"/>
@@ -142,9 +142,32 @@
     <section class="section segments catalog" aria-labelledby="segments-title">
       <div class="container section-heading reveal">
         <p class="eyebrow">Soluciones por cliente</p>
-        <h2 id="segments-title">Cada proyecto tiene una oportunidad energética distinta</h2>
-        <p>Explora el catálogo de soluciones: arrastra, desliza o usa las flechas.</p>
+        <h2 id="segments-title">Un sistema para cada cliente</h2>
+        <p>Cada cliente y segmento con el que trabajamos tiene una necesidad distinta. Por eso diseñamos la solución alrededor de lo que realmente le importa a cada uno.</p>
       </div>
+      <div class="container seg-intro-grid">
+        <article class="seg-intro reveal">
+          <span class="seg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></span>
+          <h3>Hogares</h3>
+          <p>Priorizan el <strong>ahorro</strong>, la seguridad energética y la <strong>plusvalía</strong> de su vivienda.</p>
+        </article>
+        <article class="seg-intro reveal delay-1">
+          <span class="seg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"></path></svg></span>
+          <h3>Comercios, pymes e industria</h3>
+          <p>Buscan <strong>eficiencia</strong>, continuidad del negocio, cargas críticas, estabilidad operativa, menos costos y <strong>retorno de inversión</strong>.</p>
+        </article>
+        <article class="seg-intro reveal delay-2">
+          <span class="seg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v6"></path><path d="M12 9l-5 11"></path><path d="M12 9l5 11"></path><circle cx="12" cy="5.4" r="2.4"></circle></svg></span>
+          <h3>Construcción e inmobiliario</h3>
+          <p>Integramos la energía desde el <strong>diseño arquitectónico</strong>, con criterios de eficiencia y <strong>sostenibilidad</strong> en todo el proyecto.</p>
+        </article>
+        <article class="seg-intro reveal delay-3">
+          <span class="seg-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15l3-4 3 2 4-6"></path></svg></span>
+          <h3>Consultoría energética</h3>
+          <p>Tu aliado especializado: estudios de eficiencia, <strong>prefactibilidad</strong>, factibilidad y estructuración técnica de proyectos.</p>
+        </article>
+      </div>
+      <p class="container catalog-hint reveal">Explora el catálogo de soluciones: arrastra, desliza o usa las flechas.</p>
       <div class="catalog-wrap reveal delay-1">
         <button class="cat-nav cat-prev" type="button" aria-label="Anterior">&#8249;</button>
         <div class="catalog-track" id="catalog">
@@ -192,42 +215,150 @@
       </div>
     </section>
 
-    <section class="section process" aria-labelledby="process-title">
-      <div class="container process-grid">
-        <div class="section-heading align-left reveal">
-          <p class="eyebrow">Cómo trabajamos</p>
-          <h2 id="process-title">Del diagnóstico a la operación</h2>
-          <p>Reducimos la incertidumbre técnica y comercial mediante un proceso claro, medible y escalable.</p>
-          <div class="proc-meter" aria-hidden="true"><span class="proc-meter-fill" id="proc-meter-fill"></span></div>
-          <p class="proc-hint">Desliza hacia abajo para recorrer el proceso &#8595;</p>
-        </div>
-        <ol class="proc-steps reveal delay-1" id="proc-steps">
-          <li class="proc-step">
-            <span class="proc-line" aria-hidden="true"></span>
-            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></span>
-            <div class="proc-content"><span class="proc-step-n">Paso 01</span><strong>Diagnóstico inicial</strong><span class="proc-desc">Consumo, ubicación, objetivos y restricciones.</span></div>
-          </li>
-          <li class="proc-step">
-            <span class="proc-line" aria-hidden="true"></span>
-            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1L19 8a2 2 0 0 0-3-3L5 16z"></path><path d="M14 6l3 3"></path></svg></span>
-            <div class="proc-content"><span class="proc-step-n">Paso 02</span><strong>Diseño preliminar</strong><span class="proc-desc">Dimensionamiento, tecnología y escenarios de solución.</span></div>
-          </li>
-          <li class="proc-step">
-            <span class="proc-line" aria-hidden="true"></span>
-            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M8 8h8M8 12h8M8 16h5"></path></svg></span>
-            <div class="proc-content"><span class="proc-step-n">Paso 03</span><strong>Propuesta técnico-comercial</strong><span class="proc-desc">Inversión, alcance, tiempos y beneficios esperados.</span></div>
-          </li>
-          <li class="proc-step">
-            <span class="proc-line" aria-hidden="true"></span>
-            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="9" rx="1"></rect><path d="M3 10h18M9 6v9M15 6v9M12 15v4M8 19h8"></path></svg></span>
-            <div class="proc-content"><span class="proc-step-n">Paso 04</span><strong>Implementación</strong><span class="proc-desc">Integración de equipos, instalación y puesta en marcha.</span></div>
-          </li>
-          <li class="proc-step">
-            <span class="proc-line" aria-hidden="true"></span>
-            <span class="proc-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-6 4 12 2-6h6"></path></svg></span>
-            <div class="proc-content"><span class="proc-step-n">Paso 05</span><strong>Monitoreo y mantenimiento</strong><span class="proc-desc">Seguimiento de desempeño y soporte operativo.</span></div>
-          </li>
-        </ol>
+    <section class="section quehacemos" id="que-hacemos" aria-labelledby="qh-title">
+      <span class="qh-glow" aria-hidden="true"></span>
+      <div class="container qh-intro reveal">
+        <p class="eyebrow">Qué hacemos</p>
+        <h2 id="qh-title">Diagnosticamos antes de diseñar</h2>
+        <p class="qh-lead">En AYA EC desarrollamos soluciones energéticas a partir de un riguroso análisis técnico, un diseño adecuado y una asesoría responsable.</p>
+        <p class="qh-sub">No todos los sistemas solares funcionan igual, ni todos los clientes necesitan la misma solución. Por eso estudiamos toda la información y los datos necesarios, las expectativas del cliente, las necesidades del proyecto y las condiciones del sitio para acercar soluciones aterrizadas.</p>
+      </div>
+
+      <div class="container qh-grid">
+        <article class="qh-analyze reveal">
+          <div class="qh-card-head">
+            <span class="qh-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 14l3-3 3 2 4-5"></path></svg></span>
+            <h3>Qué analizamos</h3>
+          </div>
+          <p>Todo proyecto empieza con una revisión del consumo energético y de las condiciones del sitio. Según cada cliente, estudiamos la información clave disponible para aterrizar los objetivos del sistema frente a lo que la tecnología disponible ofrece.</p>
+          <ul class="qh-chips">
+            <li>Facturas eléctricas</li>
+            <li>Demanda estimada</li>
+            <li>Horarios de mayor consumo</li>
+            <li>Cargas críticas</li>
+            <li>Estado de la infraestructura eléctrica</li>
+            <li>Necesidades de respaldo</li>
+          </ul>
+        </article>
+
+        <article class="qh-questions reveal delay-1">
+          <div class="qh-card-head">
+            <span class="qh-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9.2 9a2.8 2.8 0 0 1 5.4 1c0 1.9-2.8 2.5-2.8 2.5"></path><path d="M12 17h.01"></path></svg></span>
+            <h3>Preguntas que responde el diagnóstico</h3>
+          </div>
+          <ol class="qh-qlist">
+            <li><span class="qh-qnum" aria-hidden="true">?</span><span>¿Qué consume más energía?</span></li>
+            <li><span class="qh-qnum" aria-hidden="true">?</span><span>¿Cuánta energía puede generar el sistema solar?</span></li>
+            <li><span class="qh-qnum" aria-hidden="true">?</span><span>¿Conviene instalar baterías?</span></li>
+            <li><span class="qh-qnum" aria-hidden="true">?</span><span>¿Qué tamaño debe tener el sistema?</span></li>
+            <li><span class="qh-qnum" aria-hidden="true">?</span><span>¿Qué parte del consumo se puede cubrir con energía renovable?</span></li>
+          </ol>
+        </article>
+      </div>
+
+      <div class="container">
+        <p class="qh-closing reveal">Con esta información evitamos <strong>sobredimensionar</strong>, <strong>subdimensionar</strong> o recomendar soluciones que no respondan al uso real.</p>
+      </div>
+    </section>
+    <section class="section approach" id="enfoque" aria-labelledby="approach-title">
+      <span class="approach-glow" aria-hidden="true"></span>
+      <div class="container section-heading reveal">
+        <p class="eyebrow">Nuestro enfoque</p>
+        <h2 id="approach-title">Te acompañamos de principio a fin</h2>
+        <p>Del diseño del inmueble a la operación diaria: cada etapa con criterio técnico, la tecnología adecuada y total transparencia.</p>
+      </div>
+
+      <div class="container approach-rows">
+        <article class="approach-row reveal">
+          <div class="approach-media">
+            <img src="assets/approach-design.png" alt="Diseño e integración de energía solar desde el proyecto" loading="lazy" />
+            <button class="approach-play" type="button" aria-label="Reproducir video de ejemplo"><span></span></button>
+            <span class="approach-tag">Espacio para imagen / GIF / video</span>
+            <span class="approach-shine" aria-hidden="true"></span>
+          </div>
+          <div class="approach-body">
+            <span class="approach-index" aria-hidden="true">01</span>
+            <h3>Preparamos inmuebles para energía solar desde el diseño</h3>
+            <p>En nuestro enfoque de impulso a la construcción sostenible, nuestro trabajo no se limita a instalar paneles al final del proyecto.</p>
+            <p>Acompañamos a arquitectos, constructores y desarrolladores para incorporar criterios energéticos desde etapas tempranas de diseño. Así, el inmueble queda preparado para integrar energía solar, baterías, electrificación y eficiencia energética sin rediseños costosos.</p>
+            <p class="approach-note">Un inmueble no solo puede tener energía solar: está realmente preparado para aprovecharla y permite certificar, de manera medible, su eficiencia.</p>
+          </div>
+        </article>
+
+        <article class="approach-row reverse reveal">
+          <div class="approach-media">
+            <img src="assets/approach-tech.png" alt="Componentes del sistema solar: panel, inversor, batería y monitoreo" loading="lazy" />
+            <span class="approach-tag">Espacio para imagen / GIF / video</span>
+            <span class="approach-shine" aria-hidden="true"></span>
+          </div>
+          <div class="approach-body">
+            <span class="approach-index" aria-hidden="true">02</span>
+            <h3>Seleccionamos la tecnología adecuada</h3>
+            <p>La calidad de un proyecto no depende solo de los paneles solares. También del inversor, las protecciones eléctricas, la estructura, el cableado, las baterías, el sistema de monitoreo y la compatibilidad entre todos los componentes.</p>
+            <p class="approach-sub">En AYA EC evaluamos los equipos según criterios técnicos y operativos:</p>
+            <ul class="check-grid">
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Eficiencia y desempeño esperado</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Garantías del fabricante</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Compatibilidad con el diseño del sistema</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Condiciones climáticas del sitio</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Disponibilidad de soporte técnico</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Seguridad eléctrica</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Capacidad de monitoreo</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Escalabilidad futura</li>
+              <li><span class="chk-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4 4 10-10"></path></svg></span>Relación entre costo, calidad y vida útil</li>
+            </ul>
+            <p class="approach-note">El objetivo no es instalar la opción más grande ni la más costosa, sino la que mejor se adapta al proyecto.</p>
+          </div>
+        </article>
+
+        <article class="approach-row reveal">
+          <div class="approach-media">
+            <img src="assets/approach-om.png" alt="Monitoreo de generación y mantenimiento del sistema" loading="lazy" />
+            <button class="approach-play" type="button" aria-label="Reproducir video de ejemplo"><span></span></button>
+            <span class="approach-tag">Espacio para imagen / GIF / video</span>
+            <span class="approach-shine" aria-hidden="true"></span>
+          </div>
+          <div class="approach-body">
+            <span class="approach-index" aria-hidden="true">03</span>
+            <h3>Acompañamos la operación y el mantenimiento</h3>
+            <p>Después de la instalación, el sistema debe seguir funcionando correctamente. Por eso ofrecemos acompañamiento continuo:</p>
+            <ul class="tag-cloud">
+              <li>Mantenimiento preventivo</li>
+              <li>Revisión de desempeño</li>
+              <li>Limpieza</li>
+              <li>Inspección visual</li>
+              <li>Revisión de conexiones</li>
+              <li>Monitoreo de generación</li>
+              <li>Diagnóstico de fallas</li>
+              <li>Recomendaciones de mejora</li>
+            </ul>
+            <p>También brindamos asesoría a clientes que ya cuentan con sistemas instalados y necesitan una segunda opinión técnica, revisión de rendimiento o soporte especializado.</p>
+            <p class="approach-note">Un sistema bien mantenido genera más confianza, más energía y mayor vida útil.</p>
+          </div>
+        </article>
+
+        <article class="approach-row reverse reveal">
+          <div class="approach-media">
+            <img src="assets/approach-info.png" alt="Propuesta energética clara con alcance, ahorro y crecimiento" loading="lazy" />
+            <span class="approach-tag">Espacio para imagen / GIF / video</span>
+            <span class="approach-shine" aria-hidden="true"></span>
+          </div>
+          <div class="approach-body">
+            <span class="approach-index" aria-hidden="true">04</span>
+            <h3>Entregamos información clara para tomar decisiones</h3>
+            <p>Nuestro objetivo es que el cliente entienda exactamente qué está contratando. Por eso explicamos con claridad cada punto:</p>
+            <ul class="tag-cloud">
+              <li>Alcance de la solución</li>
+              <li>Equipos propuestos y disponibles</li>
+              <li>Limitaciones del sistema</li>
+              <li>Condiciones de instalación</li>
+              <li>Necesidades de mantenimiento</li>
+              <li>Escenarios de ahorro</li>
+              <li>Opciones de crecimiento futuro</li>
+            </ul>
+            <p class="approach-note">La energía solar y la eficiencia energética no deben sentirse como una caja negra: deben ser decisiones claras, medibles y bien justificadas.</p>
+          </div>
+        </article>
       </div>
     </section>
   </main>
